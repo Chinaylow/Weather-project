@@ -27,18 +27,10 @@ response.on("data",(data)=>{
     const des = weatherData.weather[0].description;
     const icon = weatherData.weather[0].icon;
     const adr = `https://openweathermap.org/img/wn/${icon}@4x.png`;
-    https.get(adr, (response)=>{
-        response.on('data',(data)=>{
-
-        })
-
-    })
+   
     res.write(`<p>The weather in ${country} is: ${des}</p>`)
     res.write(`<h1>The temperature in ${country} is: ${temp}</h1>`)
     res.write(`<img src=${adr} alt="weather icon">`);
-   
-
-
     res.send()
 })
 })
